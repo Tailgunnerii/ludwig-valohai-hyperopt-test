@@ -1,0 +1,7 @@
+- step:
+    command:
+    - bash /valohai/repository/prepare.sh
+    - papermill -k python3 {parameters} /valohai/repository/model_hyperopt_example.ipynb
+      /valohai/outputs/model_hyperopt_example.ipynb
+    image: valohai/pypermill
+    name: jupyter_execution
