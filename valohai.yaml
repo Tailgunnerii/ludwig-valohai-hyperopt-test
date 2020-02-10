@@ -19,7 +19,7 @@
     - default: datum://01702c7c-3616-5f5c-b770-2a9f38622d53
       name: data
       optional: false
-    name: jupyter_execution
+    name: train
     parameters:
     - default: 2
       multiple-separator: ','
@@ -39,3 +39,19 @@
       optional: true
       pass-as: -p learning_rage_max {v}
       type: float
+
+
+- pipeline:
+    name: Training Pipeline
+    nodes:
+      - name: preprocess
+        type: execution
+        step: Preprocess dataset 
+      - name: train
+        type: execution
+        step: Train model ludwig notebook
+        override:
+          inputs:
+            - name: data
+    edges:
+      - [preprocess.output.*winequalityN*, train.input.data]
