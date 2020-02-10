@@ -49,7 +49,7 @@
         step: preprocess
       - name: train
         type: execution
-        step: Train model ludwig notebook
+        step: train
         override:
           inputs:
             - name: data
