@@ -4,4 +4,27 @@
     - papermill -k python3 {parameters} /valohai/repository/model_hyperopt_example.ipynb
       /valohai/outputs/model_hyperopt_example.ipynb
     image: valohai/pypermill
+    inputs:
+    - default: datum://01702c7c-3616-5f5c-b770-2a9f38622d53
+      name: data
+      optional: false
     name: jupyter_execution
+    parameters:
+    - default: 2
+      multiple-separator: ','
+      name: max_evals
+      optional: true
+      pass-as: -p max_evals {v}
+      type: integer
+    - default: 0.0001
+      multiple-separator: ','
+      name: learning_rate_min
+      optional: true
+      pass-as: -p learning_rate_min {v}
+      type: float
+    - default: 0.01
+      multiple-separator: ','
+      name: learning_rage_max
+      optional: true
+      pass-as: -p learning_rage_max {v}
+      type: float
