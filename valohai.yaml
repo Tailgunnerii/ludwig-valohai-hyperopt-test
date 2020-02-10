@@ -21,7 +21,7 @@
       optional: false
     name: train
     parameters:
-    - default: 2
+    - default: 40
       multiple-separator: ','
       name: max_evals
       optional: true
