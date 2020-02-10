@@ -46,7 +46,7 @@
     nodes:
       - name: preprocess
         type: execution
-        step: Preprocess dataset 
+        step: preprocess
       - name: train
         type: execution
         step: Train model ludwig notebook
